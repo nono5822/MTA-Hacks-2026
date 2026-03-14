@@ -1,11 +1,11 @@
-# Seal Sensei — iOS Dashboard
+# Studious Seal — iOS Dashboard
 
 Remote control and dashboard for the **OpenClaw AI** study agent. Displays urgency, live status, assignments, intervention logs, and knowledge gaps. Built with **SwiftUI** for **iOS 17+**.
 
 ## Quick start
 
 1. **Open in Xcode**  
-   Open `SealSensei.xcodeproj` (from this repo root) in Xcode.
+   Open `SealSensei.xcodeproj` (Studious Seal project) in Xcode.
 
 2. **Run**  
    Select a simulator or device (iOS 17+) and press **Run** (⌘R).

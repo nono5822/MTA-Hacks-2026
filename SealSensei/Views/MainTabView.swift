@@ -1,8 +1,8 @@
 //
 //  MainTabView.swift
-//  Seal Sensei
+//  Studious Seal
 //
-//  3-tab app: Focus Dashboard, Intervention Feed, Study Vault.
+//  4-tab app: Focus, Interventions, Study Vault, Grade Calculator.
 //
 
 import SwiftUI
@@ -24,7 +24,12 @@ struct MainTabView: View {
                 .tabItem {
                     Label("Study Vault", systemImage: "book.closed")
                 }
+            GradeCalculatorTabView()
+                .tabItem {
+                    Label("Grades", systemImage: "percent")
+                }
         }
+        .tint(Theme.gold)
         .task {
             await api.fetchDashboard()
         }

@@ -1,6 +1,6 @@
 //
 //  UrgencyMeter.swift
-//  Seal Sensei
+//  Studious Seal
 //
 //  Visual dial/gauge for overall_urgency_score (1–10). Flashes red when 8–10.
 //
@@ -20,14 +20,14 @@ struct UrgencyMeter: View {
                 // Background arc
                 Circle()
                     .trim(from: 0.25, to: 0.75)
-                    .stroke(Color.gray.opacity(0.3), lineWidth: 20)
+                    .stroke(Theme.lightBlue.opacity(0.4), lineWidth: 20)
                     .rotationEffect(.degrees(90))
 
-                // Filled arc
+                // Filled arc (icon blues when normal, red when high urgency)
                 Circle()
                     .trim(from: 0.25, to: 0.25 + (normalizedScore / 10) * 0.5)
                     .stroke(
-                        isHighUrgency ? Color.red : Color.orange,
+                        isHighUrgency ? Color.red : Theme.darkBlue,
                         style: StrokeStyle(lineWidth: 20, lineCap: .round)
                     )
                     .rotationEffect(.degrees(90))
@@ -35,13 +35,13 @@ struct UrgencyMeter: View {
 
                 Text(String(format: "%.1f", normalizedScore))
                     .font(.system(size: 44, weight: .bold, design: .rounded))
-                    .foregroundStyle(isHighUrgency ? Color.red : .primary)
+                    .foregroundStyle(isHighUrgency ? Color.red : Theme.darkBlue)
             }
             .frame(width: 160, height: 100)
 
             Text("Urgency")
                 .font(.subheadline)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(Theme.darkBlue)
         }
         .onAppear {
             if isHighUrgency {

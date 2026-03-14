@@ -17,10 +17,16 @@
 		A1000008 /* StudyVaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000008 /* StudyVaultView.swift */; };
 		A1000009 /* KnowledgeGapDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000009 /* KnowledgeGapDetailView.swift */; };
 		A1000010 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2000010 /* Assets.xcassets */; };
+		A1000011 /* GradeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000011 /* GradeModels.swift */; };
+		A1000012 /* GradeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000012 /* GradeStore.swift */; };
+		A1000013 /* GradeCalculatorTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000013 /* GradeCalculatorTabView.swift */; };
+		A1000014 /* FolderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000014 /* FolderDetailView.swift */; };
+		A1000015 /* ClassGradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000015 /* ClassGradeView.swift */; };
+		A1000016 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000016 /* Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A2000000 /* Seal Sensei.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Seal Sensei.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2000000 /* Studious Seal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Studious Seal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2000001 /* SealSenseiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SealSenseiApp.swift; sourceTree = "<group>"; };
 		A2000002 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		A2000003 /* DashboardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardData.swift; sourceTree = "<group>"; };
@@ -31,6 +37,12 @@
 		A2000008 /* StudyVaultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyVaultView.swift; sourceTree = "<group>"; };
 		A2000009 /* KnowledgeGapDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeGapDetailView.swift; sourceTree = "<group>"; };
 		A2000010 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A2000011 /* GradeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeModels.swift; sourceTree = "<group>"; };
+		A2000012 /* GradeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeStore.swift; sourceTree = "<group>"; };
+		A2000013 /* GradeCalculatorTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeCalculatorTabView.swift; sourceTree = "<group>"; };
+		A2000014 /* FolderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderDetailView.swift; sourceTree = "<group>"; };
+		A2000015 /* ClassGradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassGradeView.swift; sourceTree = "<group>"; };
+		A2000016 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,9 +71,18 @@
 				A4000002 /* Views */,
 				A4000005 /* Models */,
 				A4000006 /* Services */,
+				A4000012 /* Utilities */,
 				A2000010 /* Assets.xcassets */,
 			);
 			path = SealSensei;
+			sourceTree = "<group>";
+		};
+		A4000012 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A2000016 /* Theme.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		A4000002 /* Views */ = {
@@ -72,8 +93,19 @@
 				A4000007 /* FocusDashboard */,
 				A4000008 /* InterventionFeed */,
 				A4000009 /* StudyVault */,
+				A4000011 /* GradeCalculator */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A4000011 /* GradeCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				A2000013 /* GradeCalculatorTabView.swift */,
+				A2000014 /* FolderDetailView.swift */,
+				A2000015 /* ClassGradeView.swift */,
+			);
+			path = GradeCalculator;
 			sourceTree = "<group>";
 		};
 		A4000003 /* Components */ = {
@@ -88,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				A2000003 /* DashboardData.swift */,
+				A2000011 /* GradeModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -96,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				A2000004 /* APIService.swift */,
+				A2000012 /* GradeStore.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -128,7 +162,7 @@
 		A4000010 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A2000000 /* Seal Sensei.app */,
+				A2000000 /* Studious Seal.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -138,7 +172,7 @@
 /* Begin PBXNativeTarget section */
 		A5000001 /* Seal Sensei */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A6000002 /* Build configuration list for PBXNativeTarget "Seal Sensei" */;
+			buildConfigurationList = A6000002 /* Build configuration list for PBXNativeTarget "Studious Seal" */;
 			buildPhases = (
 				A5000002 /* Sources */,
 				A3000001 /* Frameworks */,
@@ -148,9 +182,9 @@
 			);
 			dependencies = (
 			);
-			name = "Seal Sensei";
-			productName = "Seal Sensei";
-			productReference = A2000000 /* Seal Sensei.app */;
+			name = "Studious Seal";
+			productName = "Studious Seal";
+			productReference = A2000000 /* Studious Seal.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -168,7 +202,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A6000001 /* Build configuration list for PBXProject "Seal Sensei" */;
+			buildConfigurationList = A6000001 /* Build configuration list for PBXProject "Studious Seal" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -211,6 +245,12 @@
 				A1000007 /* InterventionFeedView.swift in Sources */,
 				A1000008 /* StudyVaultView.swift in Sources */,
 				A1000009 /* KnowledgeGapDetailView.swift in Sources */,
+				A1000011 /* GradeModels.swift in Sources */,
+				A1000012 /* GradeStore.swift in Sources */,
+				A1000013 /* GradeCalculatorTabView.swift in Sources */,
+				A1000014 /* FolderDetailView.swift in Sources */,
+				A1000015 /* ClassGradeView.swift in Sources */,
+				A1000016 /* Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,7 +322,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sealsensei.app;
-				PRODUCT_NAME = "Seal Sensei";
+				PRODUCT_NAME = "Studious Seal";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -309,7 +349,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sealsensei.app;
-				PRODUCT_NAME = "Seal Sensei";
+				PRODUCT_NAME = "Studious Seal";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -319,7 +359,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A6000001 /* Build configuration list for PBXProject "Seal Sensei" */ = {
+		A6000001 /* Build configuration list for PBXProject "Studious Seal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A6000003 /* Debug */,
@@ -328,7 +368,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A6000002 /* Build configuration list for PBXNativeTarget "Seal Sensei" */ = {
+		A6000002 /* Build configuration list for PBXNativeTarget "Studious Seal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A6000005 /* Debug */,

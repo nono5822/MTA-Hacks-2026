@@ -1,6 +1,6 @@
 //
 //  DashboardData.swift
-//  Seal Sensei
+//  Studious Seal
 //
 //  Codable models for the OpenClaw dashboard API.
 //

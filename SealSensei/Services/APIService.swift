@@ -1,6 +1,6 @@
 //
 //  APIService.swift
-//  Seal Sensei
+//  Studious Seal
 //
 //  Fetches dashboard data from the OpenClaw backend via ngrok URL.
 //
@@ -17,7 +17,7 @@ enum APIError: Error {
 @MainActor
 final class APIService: ObservableObject {
     /// Replace with the ngrok URL provided by the backend team.
-    static let baseURLString = "https://YOUR-NGROK-URL.ngrok-free.app/dashboard"
+    static let baseURLString = "https://metal-bags-study.loca.lt/"
 
     @Published var dashboard: DashboardResponse?
     @Published var isLoading = false

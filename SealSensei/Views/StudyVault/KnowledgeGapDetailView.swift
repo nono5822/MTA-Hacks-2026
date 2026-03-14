@@ -1,6 +1,6 @@
 //
 //  KnowledgeGapDetailView.swift
-//  Seal Sensei
+//  Studious Seal
 //
 //  Detail view: question_asked, wrong_answer_given, correct_concept, youtube_link, study_reference.
 //
@@ -31,7 +31,7 @@ struct KnowledgeGapDetailView: View {
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding()
-                .background(Color(.secondarySystemGroupedBackground))
+                .background(Theme.lightBlue.opacity(0.25))
                 .clipShape(RoundedRectangle(cornerRadius: 12))
 
                 if let urlString = gap.youtubeLink, !urlString.isEmpty, let url = URL(string: urlString) {
@@ -42,8 +42,8 @@ struct KnowledgeGapDetailView: View {
                         }
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(Color.red.opacity(0.15))
-                        .foregroundStyle(.red)
+                        .background(Theme.gold.opacity(0.3))
+                        .foregroundStyle(Theme.darkBlue)
                         .clipShape(RoundedRectangle(cornerRadius: 12))
                     }
                 }
@@ -64,7 +64,7 @@ struct KnowledgeGapDetailView: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding()
-        .background(Color(.secondarySystemGroupedBackground))
+        .background(Theme.lightBlue.opacity(0.2))
         .clipShape(RoundedRectangle(cornerRadius: 12))
     }
 }

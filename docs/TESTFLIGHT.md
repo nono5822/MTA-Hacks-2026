@@ -1,4 +1,4 @@
-# Testing Seal Sensei on Your Phone via TestFlight
+# Testing Studious Seal on Your Phone via TestFlight
 
 ## Prerequisites
 
@@ -11,8 +11,8 @@
 ## 1. Configure the app in Xcode
 
 1. Open **SealSensei.xcodeproj** in Xcode.
-2. Select the **Seal Sensei** project in the left sidebar (blue icon).
-3. Select the **Seal Sensei** target → **Signing & Capabilities**.
+2. Select the **Studious Seal** project in the left sidebar (blue icon).
+3. Select the **Studious Seal** target → **Signing & Capabilities**.
 4. Under **Team**, choose your Apple Developer team (your account).
 5. If you see “Failed to register bundle identifier”, click **Register** or change **Bundle Identifier** to something unique (e.g. `com.yourname.sealsensei`).
 6. Connect your iPhone with a cable (or use a wireless connection). Unlock the phone and tap **Trust** if asked.
@@ -23,7 +23,7 @@
 
 1. Go to [App Store Connect](https://appstoreconnect.apple.com) and sign in with your Apple Developer account.
 2. Click **My Apps** → **+** → **New App**.
-3. Choose **iOS**, enter a name (e.g. **Seal Sensei**), language, bundle ID (must match the one in Xcode, e.g. `com.sealsensei.app` or `com.yourname.sealsensei`), and SKU (e.g. `sealsensei1`). Create the app.
+3. Choose **iOS**, enter a name (e.g. **Studious Seal**), language, bundle ID (must match the one in Xcode, e.g. `com.sealsensei.app` or `com.yourname.studiousseal`), and SKU (e.g. `studiousseal1`). Create the app.
 
 You only do this once per app.
 
@@ -44,7 +44,7 @@ You only do this once per app.
 
 ## 4. Add the build in TestFlight (on the web)
 
-1. In **App Store Connect**, open **My Apps** → **Seal Sensei**.
+1. In **App Store Connect**, open **My Apps** → **Studious Seal**.
 2. Go to the **TestFlight** tab.
 3. Under **iOS**, wait until the build appears (status “Processing”, then “Ready to Test”). This can take 5–30 minutes.
 4. When the build is **Ready to Test**:
@@ -59,14 +59,14 @@ You only do this once per app.
 
 1. On your iPhone, install **TestFlight** from the App Store (if you don’t have it).
 2. Sign in to TestFlight with the **same Apple ID** you use in App Store Connect / Xcode.
-3. Open TestFlight. Your app (**Seal Sensei**) should appear.
+3. Open TestFlight. Your app (**Studious Seal**) should appear.
 4. Tap **Install** and accept any prompts. The app will install like a normal app.
 
 ### If you’re an external tester
 
 1. Accept the **TestFlight invitation email** on your phone (or open the link on the device where you want to install).
 2. Install **TestFlight** from the App Store if needed.
-3. In TestFlight, tap **Accept** for Seal Sensei, then **Install**.
+3. In TestFlight, tap **Accept** for Studious Seal, then **Install**.
 
 ---
 
@@ -78,7 +78,7 @@ You only do this once per app.
 | 2 | App Store Connect | Create app (once), match Bundle ID |
 | 3 | Xcode | Product → Archive → Distribute → Upload |
 | 4 | App Store Connect | TestFlight tab → wait for “Ready to Test” |
-| 5 | iPhone | Open TestFlight → Install Seal Sensei |
+| 5 | iPhone | Open TestFlight → Install Studious Seal |
 
 ---
 
@@ -88,7 +88,7 @@ You only do this once per app.
   Sign in in Xcode: **Xcode** → **Settings** → **Accounts** → **+** → Apple ID (your developer account).
 
 - **“Bundle ID already in use”**  
-  Change the bundle ID in Xcode (e.g. to `com.yourname.sealsensei`) and create the app in App Store Connect with that same ID.
+  Change the bundle ID in Xcode (e.g. to `com.yourname.studiousseal`) and create the app in App Store Connect with that same ID.
 
 - **Build stays “Processing”**  
   Wait up to ~30 minutes. If it stays for hours, check email for messages from Apple (e.g. compliance or signing issues).

@@ -1,6 +1,6 @@
 //
 //  InterventionFeedView.swift
-//  Seal Sensei
+//  Studious Seal
 //
 //  Tab 2: Timeline of intervention_logs (timestamp, platform, message).
 //
@@ -80,7 +80,7 @@ struct InterventionLogRow: View {
             Spacer(minLength: 0)
         }
         .padding()
-        .background(Color(.secondarySystemGroupedBackground))
+        .background(Theme.lightBlue.opacity(0.25))
         .clipShape(RoundedRectangle(cornerRadius: 12))
         .padding(.vertical, 4)
     }

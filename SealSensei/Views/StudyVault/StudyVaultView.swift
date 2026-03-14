@@ -1,6 +1,6 @@
 //
 //  StudyVaultView.swift
-//  Seal Sensei
+//  Studious Seal
 //
 //  Tab 3: Knowledge gaps list; tap for detail (question, wrong/correct, links).
 //

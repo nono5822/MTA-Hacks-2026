@@ -1,6 +1,6 @@
 //
 //  FocusDashboardView.swift
-//  Seal Sensei
+//  Studious Seal
 //
 //  Tab 1: Urgency meter, live status card, upcoming assignments.
 //
@@ -60,7 +60,7 @@ struct FocusDashboardView: View {
     private func sectionHeader(_ title: String) -> some View {
         Text(title)
             .font(.headline)
-            .foregroundStyle(.secondary)
+            .foregroundStyle(Theme.darkBlue)
     }
 }
 
@@ -87,7 +87,7 @@ struct LiveStatusCard: View {
             Spacer()
         }
         .padding()
-        .background(Color(.secondarySystemGroupedBackground))
+        .background(Theme.lightBlue.opacity(0.25))
         .clipShape(RoundedRectangle(cornerRadius: 12))
     }
 }
@@ -112,12 +112,13 @@ struct AssignmentRow: View {
                     .font(.caption)
                     .padding(.horizontal, 6)
                     .padding(.vertical, 2)
-                    .background(Color.orange.opacity(0.2))
+                    .background(Theme.gold.opacity(0.3))
+                    .foregroundStyle(Theme.darkBlue)
                     .clipShape(Capsule())
             }
         }
         .padding()
-        .background(Color(.tertiarySystemGroupedBackground))
+        .background(Theme.lightBlue.opacity(0.2))
         .clipShape(RoundedRectangle(cornerRadius: 10))
     }
 }
