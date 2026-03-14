@@ -23,6 +23,12 @@
       "name": "Intro to Biology",
       "professor": "Dr. Watson",
       "syllabus_parsed": true
+    },
+    {
+      "class_id": "MATH-201",
+      "name": "Linear Algebra",
+      "professor": "Prof. Gauss",
+      "syllabus_parsed": true
     }
   ],
   "assignments": [
@@ -46,12 +52,48 @@
     },
     {
       "assignment_id": "task_003",
-      "class_id": "BIOL-101",
-      "title": "Lab Report 2",
+      "class_id": "IFT-1010",
+      "title": "Recursion Exercises",
       "due_date": "2026-03-20T23:59:00Z",
+      "priority_score": 6,
+      "status": "pending",
+      "type": "homework"
+    },
+    {
+      "assignment_id": "task_004",
+      "class_id": "BIOL-101",
+      "title": "Lab Report 2 – Mitosis",
+      "due_date": "2026-03-19T23:59:00Z",
       "priority_score": 7,
       "status": "pending",
       "type": "lab"
+    },
+    {
+      "assignment_id": "task_005",
+      "class_id": "BIOL-101",
+      "title": "Midterm Exam",
+      "due_date": "2026-03-25T09:00:00Z",
+      "priority_score": 10,
+      "status": "pending",
+      "type": "exam"
+    },
+    {
+      "assignment_id": "task_006",
+      "class_id": "MATH-201",
+      "title": "Problem Set 4",
+      "due_date": "2026-03-22T23:59:00Z",
+      "priority_score": 6,
+      "status": "pending",
+      "type": "homework"
+    },
+    {
+      "assignment_id": "task_007",
+      "class_id": "MATH-201",
+      "title": "Eigenvalues Quiz",
+      "due_date": "2026-03-21T23:59:00Z",
+      "priority_score": 5,
+      "status": "pending",
+      "type": "quiz"
     }
   ],
   "intervention_logs": [
@@ -69,6 +111,14 @@
       "platform": "telegram",
       "trigger": "reminder",
       "message_sent": "Quick reminder: Quiz 5 for Programming I is in 5 days. Have you reviewed the recursion chapter?",
+      "user_reply": "I'll do it tonight."
+    },
+    {
+      "log_id": "log_087",
+      "timestamp": "2026-03-13T14:00:00Z",
+      "platform": "discord",
+      "trigger": "study_check",
+      "message_sent": "You've been focused for 2 hours — great job! Take a short break and then consider tackling the Binary Tree project.",
       "user_reply": null
     }
   ],
@@ -94,6 +144,17 @@
       "study_reference": "Lecture 6 slides - Slide 12",
       "youtube_link": "https://youtube.com/results?search_query=recursion+base+case",
       "status": "reviewed"
+    },
+    {
+      "gap_id": "gap_003",
+      "class_id": "MATH-201",
+      "topic": "Eigenvalues",
+      "question_asked": "What does it mean for λ to be an eigenvalue of matrix A?",
+      "wrong_answer_given": "A − λ is invertible",
+      "correct_concept": "λ is an eigenvalue of A if there exists a nonzero vector v such that Av = λv; equivalently, det(A − λI) = 0.",
+      "study_reference": "Textbook Ch. 5 - Section 5.1",
+      "youtube_link": "https://youtube.com/results?search_query=eigenvalues+linear+algebra",
+      "status": "needs_review"
     }
   ]
 }

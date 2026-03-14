@@ -9,6 +9,7 @@ import SwiftUI
 
 struct InterventionFeedView: View {
     @ObservedObject var api: APIService
+    @State private var showUserPicker = false
 
     private var logs: [InterventionLog] {
         (api.dashboard?.interventionLogs ?? []).sorted { a, b in
@@ -23,7 +24,11 @@ struct InterventionFeedView: View {
                     ProgressView("Loading…")
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                 } else if api.dashboard == nil, api.error == nil {
-                    ContentUnavailableView("No data", systemImage: "bubble.left.and.bubble.right", description: Text("Interventions will appear here."))
+                    ContentUnavailableView(
+                        "No data",
+                        systemImage: "bubble.left.and.bubble.right",
+                        description: Text(api.username == nil ? "Select a user in Focus tab to load data." : "Interventions will appear here.")
+                    )
                 } else {
                     ScrollView {
                         LazyVStack(alignment: .leading, spacing: 0) {
@@ -39,8 +44,16 @@ struct InterventionFeedView: View {
             .navigationTitle("Interventions")
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button("Mock") { api.loadMockData() }
+                    Menu {
+                        Button("Server & user") { showUserPicker = true }
+                        Button("Mock data") { api.loadMockData() }
+                    } label: {
+                        Image(systemName: "person.crop.circle")
+                    }
                 }
+            }
+            .sheet(isPresented: $showUserPicker) {
+                UserPickerView(api: api, isPresented: $showUserPicker)
             }
         }
     }

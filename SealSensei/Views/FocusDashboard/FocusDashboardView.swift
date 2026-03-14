@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FocusDashboardView: View {
     @ObservedObject var api: APIService
+    @State private var showUserPicker = false
 
     private var liveStatus: LiveStatus? { api.dashboard?.liveStatus }
     private var assignments: [Assignment] {
@@ -25,9 +26,23 @@ struct FocusDashboardView: View {
                     ProgressView("Loading…")
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                 } else if let err = api.error {
-                    ContentUnavailableView("Couldn't load dashboard", systemImage: "wifi.exclamationmark", description: Text(err.localizedDescription))
+                    ContentUnavailableView(
+                        "Couldn't load dashboard",
+                        systemImage: "wifi.exclamationmark",
+                        description: Text((err as? LocalizedError)?.errorDescription ?? String(describing: err))
+                    )
+                    if api.error is APIError {
+                        Button("Server & user settings") { showUserPicker = true }
+                            .padding(.top)
+                    }
                 } else if api.dashboard == nil {
-                    ContentUnavailableView("No data", systemImage: "tray", description: Text("Pull to refresh or load mock data."))
+                    ContentUnavailableView(
+                        "No data",
+                        systemImage: "person.crop.circle.badge.questionmark",
+                        description: Text(api.username == nil ? "Select a user to load your priority list, or use mock data." : "Pull to refresh or load mock data.")
+                    )
+                    Button(api.username == nil ? "Select user" : "Server & user settings") { showUserPicker = true }
+                        .padding(.top)
                 } else {
                     ScrollView {
                         VStack(alignment: .leading, spacing: 24) {
@@ -51,8 +66,16 @@ struct FocusDashboardView: View {
             .navigationTitle("Focus")
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button("Mock") { api.loadMockData() }
+                    Menu {
+                        Button("Server & user") { showUserPicker = true }
+                        Button("Mock data") { api.loadMockData() }
+                    } label: {
+                        Image(systemName: "person.crop.circle")
+                    }
                 }
+            }
+            .sheet(isPresented: $showUserPicker) {
+                UserPickerView(api: api, isPresented: $showUserPicker)
             }
         }
     }
@@ -78,7 +101,7 @@ struct LiveStatusCard: View {
             VStack(alignment: .leading, spacing: 4) {
                 Text(status.isGaming ? "Gaming detected" : "Focus mode")
                     .font(.headline)
-                if status.isGaming, let activity = status.currentActivity, !activity.isEmpty {
+                if status.isGaming, let activity = status.currentActivity, !activity.isEmpty, activity.lowercased() != "none" {
                     Text(activity)
                         .font(.subheadline)
                         .foregroundStyle(.secondary)

@@ -31,7 +31,9 @@ struct MainTabView: View {
         }
         .tint(Theme.gold)
         .task {
-            await api.fetchDashboard()
+            if api.username != nil {
+                await api.fetchDashboard()
+            }
         }
     }
 }

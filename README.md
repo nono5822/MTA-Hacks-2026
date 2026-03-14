@@ -11,17 +11,19 @@ Remote control and dashboard for the **OpenClaw AI** study agent. Displays urgen
    Select a simulator or device (iOS 17+) and press **Run** (⌘R).
 
 3. **Mock data**  
-   With no backend, tap **Mock** in the top-right of any tab to load sample data and try the full UI.
+   With no backend, tap the **person** icon in the top-right of Focus/Interventions/Study Vault → **Mock data** to load sample data.
 
-## Backend / ngrok
+4. **Backend (Flask API)**  
+   Tap the **person** icon → **Server & user**. Set the server URL (e.g. `http://localhost:5000/` or your ngrok URL) and a username. Use **Load user list** to fetch users from `/api/users`, or type a username and tap **Use this username**. The app then loads that user’s data from `GET /api/user/<username>/priority` (the backend’s `priority_list.json` must match the [data contract](#data-contract)).
 
-- The app fetches dashboard data with a single **GET** request via `URLSession`.
-- **URL:** set in `SealSensei/Services/APIService.swift`:
-  ```swift
-  static let baseURLString = "https://YOUR-NGROK-URL.ngrok-free.app/dashboard"
-  ```
-- Replace `YOUR-NGROK-URL` with the ngrok URL from your backend team.  
-- The response must match the [data contract](#data-contract) (JSON with `user_profile`, `live_status`, `assignments`, `intervention_logs`, `knowledge_gaps`, etc.).
+## Backend (Flask Study Sensei API Bridge)
+
+The app is built for the Flask API that exposes:
+
+- **GET /api/users** — returns a JSON array of usernames (workspace folders under `~/.openclaw/workspace`).
+- **GET /api/user/<username>/priority** — returns the user’s `priority_list.json` (dashboard JSON).
+
+Server URL and selected username are stored on device. Default base URL is `http://localhost:5000/`. Change it in the app via **Server & user** (e.g. to your ngrok URL for a device). The file served at `priority_list.json` must match the [data contract](#data-contract).
 
 ## App structure (3 tabs)
 

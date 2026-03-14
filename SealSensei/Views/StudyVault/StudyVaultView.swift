@@ -9,6 +9,7 @@ import SwiftUI
 
 struct StudyVaultView: View {
     @ObservedObject var api: APIService
+    @State private var showUserPicker = false
 
     private var gaps: [KnowledgeGap] { api.dashboard?.knowledgeGaps ?? [] }
 
@@ -19,7 +20,11 @@ struct StudyVaultView: View {
                     ProgressView("Loading…")
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                 } else if api.dashboard == nil, api.error == nil {
-                    ContentUnavailableView("No data", systemImage: "book.closed", description: Text("Knowledge gaps will appear here."))
+                    ContentUnavailableView(
+                        "No data",
+                        systemImage: "book.closed",
+                        description: Text(api.username == nil ? "Select a user in Focus tab to load data." : "Knowledge gaps will appear here.")
+                    )
                 } else {
                     List(gaps) { gap in
                         NavigationLink(value: gap) {
@@ -36,8 +41,16 @@ struct StudyVaultView: View {
             }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button("Mock") { api.loadMockData() }
+                    Menu {
+                        Button("Server & user") { showUserPicker = true }
+                        Button("Mock data") { api.loadMockData() }
+                    } label: {
+                        Image(systemName: "person.crop.circle")
+                    }
                 }
+            }
+            .sheet(isPresented: $showUserPicker) {
+                UserPickerView(api: api, isPresented: $showUserPicker)
             }
         }
     }
