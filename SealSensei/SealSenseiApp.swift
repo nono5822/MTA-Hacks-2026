@@ -11,24 +11,25 @@ import UIKit
 @main
 struct SealSenseiApp: App {
     init() {
-        let darkBlue = UIColor(red: 0.141, green: 0.604, blue: 0.851, alpha: 1)
+        let pastelBlue = UIColor(red: 0.682, green: 0.776, blue: 0.812, alpha: 1) // #AEC6CF
+        let darkNavy = UIColor(red: 0.149, green: 0.259, blue: 0.412, alpha: 1)   // slightly lighter navy
         let navAppearance = UINavigationBarAppearance()
         navAppearance.configureWithOpaqueBackground()
-        navAppearance.backgroundColor = darkBlue
-        navAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-        navAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        navAppearance.backgroundColor = pastelBlue
+        navAppearance.titleTextAttributes = [.foregroundColor: darkNavy]
+        navAppearance.largeTitleTextAttributes = [.foregroundColor: darkNavy]
         UINavigationBar.appearance().standardAppearance = navAppearance
         UINavigationBar.appearance().scrollEdgeAppearance = navAppearance
         UINavigationBar.appearance().compactAppearance = navAppearance
-        UINavigationBar.appearance().tintColor = .white
+        UINavigationBar.appearance().tintColor = darkNavy
         UINavigationBar.appearance().prefersLargeTitles = false
 
         let tabAppearance = UITabBarAppearance()
         tabAppearance.configureWithOpaqueBackground()
-        tabAppearance.backgroundColor = darkBlue
+        tabAppearance.backgroundColor = pastelBlue
         UITabBar.appearance().standardAppearance = tabAppearance
         UITabBar.appearance().scrollEdgeAppearance = tabAppearance
-        UITabBar.appearance().tintColor = UIColor(red: 0.890, green: 0.655, blue: 0.220, alpha: 1) // gold
+        UITabBar.appearance().tintColor = darkNavy
     }
 
     var body: some Scene {

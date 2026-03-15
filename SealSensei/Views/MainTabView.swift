@@ -24,7 +24,7 @@ struct MainTabView: View {
                 .tabItem {
                     Label("Study Vault", systemImage: "book.closed")
                 }
-            GradeCalculatorTabView()
+            GradeCalculatorTabView(api: api)
                 .tabItem {
                     Label("Grades", systemImage: "percent")
                 }

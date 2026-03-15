@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct GradeCalculatorTabView: View {
+    @ObservedObject var api: APIService
     @StateObject private var store = GradeStore()
     @State private var showingNewFolder = false
     @State private var newFolderName = ""
     @State private var showingNewUnfiledClass = false
     @State private var newUnfiledClassName = ""
+    @State private var showUserPicker = false
 
     var body: some View {
         NavigationStack {
@@ -69,6 +71,19 @@ struct GradeCalculatorTabView: View {
             }
             .navigationTitle("Grades")
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Menu {
+                        Button("Server & user") { showUserPicker = true }
+                        Button("Mock data") { api.loadMockData() }
+                    } label: {
+                        Image(systemName: "person.crop.circle")
+                    }
+                }
+            }
+            .sheet(isPresented: $showUserPicker) {
+                UserPickerView(api: api, isPresented: $showUserPicker)
+            }
             .safeAreaInset(edge: .bottom) {
                 GradeDisplayModeBar(store: store)
             }
@@ -158,5 +173,5 @@ struct GradeClassRow: View {
 }
 
 #Preview {
-    GradeCalculatorTabView()
+    GradeCalculatorTabView(api: APIService())
 }

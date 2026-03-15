@@ -79,14 +79,6 @@
 			path = SealSensei;
 			sourceTree = "<group>";
 		};
-		A4000012 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				A2000016 /* Theme.swift */,
-			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
 		A4000002 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,16 +90,6 @@
 				A4000011 /* GradeCalculator */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		A4000011 /* GradeCalculator */ = {
-			isa = PBXGroup;
-			children = (
-				A2000013 /* GradeCalculatorTabView.swift */,
-				A2000014 /* FolderDetailView.swift */,
-				A2000015 /* ClassGradeView.swift */,
-			);
-			path = GradeCalculator;
 			sourceTree = "<group>";
 		};
 		A4000003 /* Components */ = {
@@ -170,10 +152,28 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		A4000011 /* GradeCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				A2000013 /* GradeCalculatorTabView.swift */,
+				A2000014 /* FolderDetailView.swift */,
+				A2000015 /* ClassGradeView.swift */,
+			);
+			path = GradeCalculator;
+			sourceTree = "<group>";
+		};
+		A4000012 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A2000016 /* Theme.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A5000001 /* Seal Sensei */ = {
+		A5000001 /* Studious Seal */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A6000002 /* Build configuration list for PBXNativeTarget "Studious Seal" */;
 			buildPhases = (
@@ -205,7 +205,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A6000001 /* Build configuration list for PBXProject "Studious Seal" */;
+			buildConfigurationList = A6000001 /* Build configuration list for PBXProject "SealSensei" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -218,7 +218,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A5000001 /* Seal Sensei */,
+				A5000001 /* Studious Seal */,
 			);
 		};
 /* End PBXProject section */
@@ -314,6 +314,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = PAQ2RR3Z2J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -341,6 +342,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = PAQ2RR3Z2J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -363,7 +365,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A6000001 /* Build configuration list for PBXProject "Studious Seal" */ = {
+		A6000001 /* Build configuration list for PBXProject "SealSensei" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A6000003 /* Debug */,

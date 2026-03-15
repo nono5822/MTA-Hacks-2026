@@ -49,6 +49,7 @@ struct FocusDashboardView: View {
                             if let status = liveStatus {
                                 UrgencyMeter(score: status.overallUrgencyScore)
                                     .frame(maxWidth: .infinity)
+                                    .padding(.top, 24)
 
                                 LiveStatusCard(status: status)
 
