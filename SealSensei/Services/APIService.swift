@@ -130,7 +130,6 @@ final class APIService: ObservableObject {
             }
             if http.statusCode == 404 {
                 error = APIError.notFound(username: user)
-                dashboard = nil
                 isLoading = false
                 return
             }

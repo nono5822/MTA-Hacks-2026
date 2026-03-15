@@ -64,6 +64,7 @@ struct FocusDashboardView: View {
                 }
             }
             .navigationTitle("Focus")
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Menu {

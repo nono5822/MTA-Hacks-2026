@@ -36,6 +36,7 @@ struct StudyVaultView: View {
                 }
             }
             .navigationTitle("Study Vault")
+            .navigationBarTitleDisplayMode(.inline)
             .navigationDestination(for: KnowledgeGap.self) { gap in
                 KnowledgeGapDetailView(gap: gap)
             }

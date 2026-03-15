@@ -31,6 +31,7 @@ struct MainTabView: View {
         }
         .tint(Theme.gold)
         .task {
+            api.loadMockData()
             if api.username != nil {
                 await api.fetchDashboard()
             }

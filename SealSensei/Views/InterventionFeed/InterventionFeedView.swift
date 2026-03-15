@@ -42,6 +42,7 @@ struct InterventionFeedView: View {
                 }
             }
             .navigationTitle("Interventions")
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Menu {

@@ -68,6 +68,7 @@ struct GradeCalculatorTabView: View {
                 }
             }
             .navigationTitle("Grades")
+            .navigationBarTitleDisplayMode(.inline)
             .safeAreaInset(edge: .bottom) {
                 GradeDisplayModeBar(store: store)
             }
